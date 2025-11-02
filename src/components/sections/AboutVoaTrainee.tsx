@@ -5,7 +5,7 @@ import Cta from '../cta';
 
 export default function AboutVoaTrainee() {
   return (
-    <section id="#quem-somos" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="quem-somos" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-10">
           Um pouco sobre a Voa Trainee
@@ -47,10 +47,10 @@ export default function AboutVoaTrainee() {
               <div className="flex flex-col items-center w-full sm:w-1/2">
                 <div className="relative w-20 h-20 mb-4">
                   <Image
-                    src="/img/tati.jpeg"
+                    src="/img/tati2.jpeg"
                     alt="Tati Ávila"
                     fill
-                    className="rounded-full object-cover border border-gray-200"
+                    className="rounded-full object-cover object-top border border-gray-200"
                   />
                 </div>
                 <h3 className="font-semibold text-lg text-gray-900 text-center">Tati Ávila</h3>

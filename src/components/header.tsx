@@ -22,7 +22,7 @@ export default function Header() {
     <header
       className={`flex items-center justify-between w-full px-8 py-4 transition-all duration-300 ${
         isSticky
-          ? "fixed top-0 left-0 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg z-50"
+          ? "fixed top-0 left-0 z-50"
           : "absolute top-0 left-0 bg-transparent"
       }`}
     >

@@ -1,12 +1,29 @@
+'use client';
+import { useState } from "react";
 import Image from "next/image";
 import Logo from "../logo";
 import Cta from "../cta";
 import Header from "../header";
 
 export default function HeroSection() {
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / 25;
+    const y = (e.clientY - rect.top - rect.height / 2) / 25;
+    setOffset({ x, y });
+  };
+
+  const handleMouseLeave = () => setOffset({ x: 0, y: 0 });
+
   return (
-    <section className="w-full bg-[#1426D1] text-white px-6 md:px-12 py-10 rounded-b-4xl min-h-screen">
+    <section
+      id="inicio"
+      className="w-full bg-[#1426D1] text-white px-6 md:px-12 py-10 rounded-b-4xl min-h-screen overflow-hidden"
+    >
       <Header />
+
       <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mt-32">
         <div className="w-full md:w-[60%] text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
@@ -51,10 +68,28 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="w-full md:w-[40%] flex justify-center md:justify-end relative">
-          <div className="w-72 h-72 md:w-[400px] md:h-[400px] rounded-full bg-[#0E1EA8] flex items-center justify-center relative">
-            <div className="absolute inset-0 rounded-full border-8 border-[#081272] opacity-40"></div>
-            <Logo />
+        {/* === ELEMENTO À DIREITA COM EFEITO === */}
+        <div
+          className="w-full md:w-[40%] flex justify-center md:justify-end relative"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="w-72 h-72 md:w-[400px] md:h-[400px] rounded-full bg-[#0E1EA8] flex items-center justify-center relative overflow-visible">
+            {/* Foguete ilustração nova */}
+            <div
+              className="absolute w-[300px] h-[300px]"
+              style={{
+                transform: `translate(${offset.x * -1.2}px, ${offset.y * -1.2}px) rotate(${offset.x / 20}deg)`,
+                transition: "transform 0.2s ease-out",
+              }}
+            >
+              <Image
+                src="/rockect-parallax.png"
+                alt="Foguete"
+                fill
+                className="object-contain pointer-events-none"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function MentorshipAudience() {
   ];
 
   return (
-    <section id="#para-quem-e-a-mentoria" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="para-quem-e-a-mentoria" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-16">
           Para quem é essa mentoria?
