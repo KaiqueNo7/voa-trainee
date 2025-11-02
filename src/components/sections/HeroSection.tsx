@@ -77,7 +77,7 @@ export default function HeroSection() {
           <div className="w-72 h-72 md:w-[400px] md:h-[400px] rounded-full bg-[#0E1EA8] flex items-center justify-center relative overflow-visible">
             {/* Foguete ilustração nova */}
             <div
-              className="absolute w-[300px] h-[300px]"
+              className="absolute w-[400px] h-[400px]"
               style={{
                 transform: `translate(${offset.x * -1.2}px, ${offset.y * -1.2}px) rotate(${offset.x / 20}deg)`,
                 transition: "transform 0.2s ease-out",

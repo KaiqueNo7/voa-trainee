@@ -1,6 +1,8 @@
 'use client';
 
-import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   FaUserCircle,
   FaFileAlt,
@@ -11,7 +13,13 @@ import {
 } from 'react-icons/fa';
 import Cta from '../cta';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function VoaTraineeJourney() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+
   const steps = [
     {
       icon: <FaUserCircle className="w-10 h-10 text-blue-500" />,
@@ -45,20 +53,101 @@ export default function VoaTraineeJourney() {
     },
   ];
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const line = lineRef.current;
+    const dot = dotRef.current;
+
+    if (!container || !line || !dot) return;
+
+    const totalHeight = line.scrollHeight - 40; // ajusta o movimento da bolinha
+
+    gsap.set(dot, { yPercent: -50 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+      },
+    });
+
+    // bolinha sobe junto com scroll
+    tl.fromTo(dot, { y: 0 }, { y: totalHeight, ease: 'none' });
+
+    // linha acende conforme o scroll
+    tl.fromTo(
+      line,
+      { backgroundSize: '100% 0%' },
+      {
+        backgroundSize: '100% 100%',
+        ease: 'none',
+      },
+      0
+    );
+
+    // animação suave dos cards
+    gsap.utils.toArray('.card').forEach((card: any) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
-    <section id="trajetoria" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 relative">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+    <section
+      id="trajetoria"
+      className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
+    >
+      <div
+        ref={containerRef}
+        className="max-w-4xl mx-auto flex flex-col items-center relative"
+      >
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-16 text-center">
           Trajetória na Voa Trainee
         </h2>
 
         <div className="relative flex flex-col items-center">
-          <div className="absolute left-1/2 -translate-x-1/2 h-full border-l-2 border-dashed border-blue-400 z-0"></div>
+          {/* linha com gradiente e efeito de preenchimento */}
+          <div
+            ref={lineRef}
+            className="absolute left-1/2 -translate-x-1/2 w-[4px] h-full rounded-full z-0"
+            style={{
+              background:
+                'linear-gradient(to bottom, #3B82F6 0%, #1D4ED8 100%)',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 0%',
+              transition: 'background-size 0.2s ease',
+            }}
+          />
 
+          {/* bolinha animada */}
+          <div
+            ref={dotRef}
+            className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-400 to-blue-700 rounded-full shadow-lg border-4 border-white z-10"
+          ></div>
+
+          {/* passos */}
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`relative flex flex-col md:flex-row items-center w-full mb-12 ${
+              className={`card relative flex flex-col md:flex-row items-center w-full mb-12 ${
                 index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
               }`}
             >
@@ -74,11 +163,13 @@ export default function VoaTraineeJourney() {
                   <h3 className="text-blue-500 font-semibold text-base mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">{step.text}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {step.text}
+                  </p>
                 </div>
               </div>
 
-              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-white z-0"></div>
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white z-0"></div>
             </div>
           ))}
         </div>
