@@ -5,7 +5,7 @@ import Cta from '../cta';
 
 export default function AboutVoaTrainee() {
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="#quem-somos" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-10">
           Um pouco sobre a Voa Trainee
@@ -23,40 +23,43 @@ export default function AboutVoaTrainee() {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 flex flex-col gap-8 items-center md:items-start text-center md:text-left">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Image
-                src="/img/ruan.jpeg"
-                alt="Ruan Remiz"
-                width={80}
-                height={80}
-                className="rounded-full object-cover border border-gray-200"
-              />
-              <div>
-                <h3 className="font-semibold text-lg text-gray-900">Ruan Remiz</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Finalista em 3 Processos Trainee. Trainee formado em uma multinacional de energia. 
-                  Entrega de 4+ Projetos estratégicos. Mentor de candidatos há 2 anos. 
-                  Traz a visão dos candidatos.
-                </p>
+          <div className="w-full md:w-1/2 flex flex-col gap-8 items-center">
+            <div className="flex flex-col sm:flex-row items-start justify-center gap-8 w-full">
+              <div className="flex flex-col items-center w-full sm:w-1/2">
+                <div className="relative w-20 h-20 mb-4">
+                  <Image
+                    src="/img/ruan.jpeg"
+                    alt="Ruan Remiz"
+                    fill
+                    className="rounded-full object-cover border border-gray-200"
+                  />
+                </div>
+                <h3 className="font-semibold text-lg text-gray-900 text-center">Ruan Remiz</h3>
+                <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed text-center mt-2 space-y-2">
+                  <li>Finalista em 3 Processos Trainee.</li>
+                  <li>Trainee formado em uma multinacional de energia.</li>
+                  <li>Entrega de 4+ Projetos estratégicos.</li>
+                  <li>Mentor de candidatos há 2 anos.</li>
+                  <li>Traz a visão dos candidatos.</li>
+                </ul>
               </div>
-            </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Image
-                src="/img/tati.jpeg"
-                alt="Tati Ávila"
-                width={80}
-                height={80}
-                className="rounded-full object-cover border border-gray-200"
-              />
-              <div>
-                <h3 className="font-semibold text-lg text-gray-900">Tati Ávila</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Psicóloga e Consultora de Carreira. Há 20 anos em Recrutamento e Seleção.
-                  +30 Programas Trainee e +5000 candidatos avaliados dentro e fora do Brasil.
-                  Traz a visão do RH e Gestão.
-                </p>
+              <div className="flex flex-col items-center w-full sm:w-1/2">
+                <div className="relative w-20 h-20 mb-4">
+                  <Image
+                    src="/img/tati.jpeg"
+                    alt="Tati Ávila"
+                    fill
+                    className="rounded-full object-cover border border-gray-200"
+                  />
+                </div>
+                <h3 className="font-semibold text-lg text-gray-900 text-center">Tati Ávila</h3>
+                <ul className="list-disc list-inside text-gray-700 text-sm leading-relaxed text-center mt-2 space-y-2">
+                  <li>Psicóloga e Consultora de Carreira.</li>
+                  <li>20 anos em Recrutamento e Seleção.</li>
+                  <li>+30 Programas Trainee e +5000 candidatos avaliados.</li>
+                  <li>Traz a visão do RH e Gestão.</li>
+                </ul>
               </div>
             </div>
 

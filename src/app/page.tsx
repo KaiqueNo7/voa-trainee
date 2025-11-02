@@ -13,11 +13,8 @@ import WhatsappCommunity from "@/components/sections/WhatsappCommunity";
 
 export default function Home() {
   return (
-    <main>
-      <section id="inicio" className="min-h-screen bg-first-section rounded-b-4xl">
-        <Header />
-        <HeroSection />
-      </section>
+    <main>  
+      <HeroSection />
       <AboutVoaTrainee />
       <TestimonialsSection />
       <VoaTraineeJourney />

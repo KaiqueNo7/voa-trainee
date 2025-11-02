@@ -39,7 +39,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="faq" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-12">
           Dúvidas frequentes
@@ -57,14 +57,14 @@ export default function FaqSection() {
               >
                 {faq.question}
                 <FaChevronDown
-                  className={`text-blue-500 transform transition-transform duration-300 ${
+                  className={`text-blue-500 transform transition-transform duration-300 cursor-pointer ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {openIndex === index && (
-                <div className="p-4 pt-0 text-gray-700 text-sm leading-relaxed">
+                <div className="p-4 pt-0 text-gray-700 text-sm leading-relaxed mt-2">
                   {faq.answer}
                 </div>
               )}

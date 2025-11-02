@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Cta from '../cta';
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -11,7 +12,7 @@ export default function TestimonialsSection() {
       complement: `Obrigada demais, senti que não sei mais nada sobre mim, consegui ter mais confiança para fazer uma boa entrevista (e bem coerente às ideias). Desejo muito sucesso a vocês, vida voar 🚀`,
       name: 'Luani Viccino',
       role: 'Trainee Alper Seguros',
-      avatar: '/luani.jpg',
+      avatar: '/logo.png',
     },
     {
       message: `Participar da mentoria da Voa Trainee foi um divisor de águas na minha preparação. 
@@ -19,7 +20,7 @@ export default function TestimonialsSection() {
       complement: `Agradeço demais pelo apoio, paciência e dedicação de vocês!`,
       name: 'João Martins',
       role: 'Trainee Ambev',
-      avatar: '/joao.jpg',
+      avatar: '/logo.png',
     },
   ];
 
@@ -28,7 +29,7 @@ export default function TestimonialsSection() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="depoimentos" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-12">
           Principais depoimentos
@@ -68,9 +69,7 @@ export default function TestimonialsSection() {
           </button>
         </div>
 
-        <button className="mt-12 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors">
-          Quero viver essa experiência
-        </button>
+        <Cta text="Quero viver essa experiência" />
       </div>
     </section>
   );
