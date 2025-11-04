@@ -33,7 +33,7 @@ export default function Cta({ text }: { text: string }) {
     }
 
     const message = `
-    *Nova inscrição via site* 🚀
+    *Nova inscrição via site*
 
     *Nome:* ${formData.nome}
     *Celular:* ${formData.celular}
@@ -43,7 +43,7 @@ export default function Cta({ text }: { text: string }) {
     *Período de formação:* ${formData.periodo || "-"}
     `.trim();
 
-    const phone = "5599999999999";
+    const phone = "5511921825233";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };

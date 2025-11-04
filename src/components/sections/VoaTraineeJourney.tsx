@@ -113,7 +113,7 @@ export default function VoaTraineeJourney() {
   return (
     <section
       id="trajetoria"
-      className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
+      className="w-full bg-conic from-blue-600 to-sky-400 py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
     >
       <div
         ref={containerRef}
@@ -127,7 +127,7 @@ export default function VoaTraineeJourney() {
           {/* linha com gradiente e efeito de preenchimento */}
           <div
             ref={lineRef}
-            className="absolute left-1/2 -translate-x-1/2 w-[4px] h-full rounded-full z-0"
+            className="absolute left-1/2 -translate-x-1/2 w-4px h-full rounded-full z-30"
             style={{
               background:
                 'linear-gradient(to bottom, #3B82F6 0%, #1D4ED8 100%)',
@@ -140,14 +140,14 @@ export default function VoaTraineeJourney() {
           {/* bolinha animada */}
           <div
             ref={dotRef}
-            className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-400 to-blue-700 rounded-full shadow-lg border-4 border-white z-10"
+            className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-linear-to-r from-blue-400 to-blue-700 rounded-full shadow-lg border-4 border-white z-0"
           ></div>
 
           {/* passos */}
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`card relative flex flex-col md:flex-row items-center w-full mb-12 ${
+              className={`card relative flex flex-col md:flex-row items-center w-full my-20 ${
                 index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
               }`}
             >

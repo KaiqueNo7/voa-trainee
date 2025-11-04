@@ -8,9 +8,10 @@ import Image from 'next/image';
 import { FiChevronRight } from 'react-icons/fi';
 
 type Testimonial = {
-  type: 'video' | 'image';
+  type: 'video' | 'image' | 'embed';
   image: string;
   video?: string;
+  embed?: string;
   name: string;
   role: string;
   avatar: string;
@@ -21,7 +22,7 @@ export default function TestimonialsSection() {
     {
       type: 'video',
       image: '/testemonials/01.jpeg',
-      video: '/video1.mp4',
+      video: '/videos/testimonial1.mp4',
       name: 'Luani Viccino',
       role: 'Trainee Alper Seguros',
       avatar: '/avatar.jpeg',
@@ -49,7 +50,7 @@ export default function TestimonialsSection() {
     },
   ];
 
-  const videoSlide = testimonials.find((t) => t.type === 'video');
+  const videoSlide = testimonials.find((t) => t.type === 'video' || t.type === 'embed');
   const imageSlides = testimonials.filter((t) => t.type === 'image');
 
   return (
@@ -70,28 +71,37 @@ export default function TestimonialsSection() {
           allowTouchMove={true}
           className="overflow-hidden"
         >
-          {/* Slide de vídeo */}
           {videoSlide && (
             <SwiperSlide>
               <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative transition-all duration-700 ease-in-out">
                 <div className="relative w-full md:w-1/2">
-                  <Image
-                    src={videoSlide.image}
-                    alt={videoSlide.name}
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-md object-cover"
-                  />
+                  {videoSlide.embed && videoSlide.type === 'embed' && (
+                    <div
+                      className="w-full rounded-lg shadow-md mb-4 overflow-hidden"
+                      dangerouslySetInnerHTML={{ __html: videoSlide.embed }}
+                    />
+                  )}
+
+                  {!videoSlide.embed && videoSlide.type !== 'embed' && (
+                    <Image
+                      src={videoSlide.image}
+                      alt={videoSlide.name}
+                      width={600}
+                      height={400}
+                      className="rounded-lg shadow-md object-cover"
+                    />
+                  )}
                 </div>
 
                 <div className="relative w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                  {videoSlide.video && (
+                  {videoSlide.video && videoSlide.type === 'video' && (
                     <video
                       src={videoSlide.video}
                       controls
                       className="w-full rounded-lg shadow-md mb-4 h-80"
                     />
                   )}
+
                   <div className="flex items-center gap-4">
                     <div className="relative w-10 h-10">
                       <Image
@@ -111,7 +121,6 @@ export default function TestimonialsSection() {
             </SwiperSlide>
           )}
 
-          {/* Slides simples (3 imagens por slide) */}
           {Array.from({ length: Math.ceil(imageSlides.length / 3) }).map((_, groupIndex) => (
             <SwiperSlide key={groupIndex}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

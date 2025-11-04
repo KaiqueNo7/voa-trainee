@@ -17,7 +17,7 @@ export default function WhatsappCommunity() {
         </p>
 
         <a
-          href="https://wa.me/5599999999999"
+          href="https://chat.whatsapp.com/LL7eIkoQTKYI5Y04ypKIjX?mode=wwt"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-full transition-colors"

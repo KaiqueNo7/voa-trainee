@@ -4,7 +4,7 @@ export default function MentorshipAudience() {
   const cards = [
     {
       title: 'Universitários e Recém-formados',
-      text: 'Para quem está terminando a faculdade ou se formou há pouco tempo e quer entrar no mercado através de programas de trainee. Você vai aprender como se destacar mesmo sem muita experiência profissional.',
+      text: 'Para quem está terminando a faculdade ou se formou nos últmos 3 anos e quer entrar no mercado através de programas de trainee. Você vai aprender como se destacar mesmo sem muita experiência profissional.',
     },
     {
       title: 'Jovens em Transição de Carreira',
@@ -14,16 +14,20 @@ export default function MentorshipAudience() {
       title: 'Quem Quer Clareza e Direção',
       text: 'Perfeita para quem se sente perdido nas inscrições ou não sabe por onde começar. Você recebe um plano estratégico para escolher os programas certos e se preparar para cada etapa do processo.',
     },
+    {
+      title: 'Para quem já é experiente com os processos de trainee',
+      text: 'Vamos te auxiliar a lapidar sua história para chegar bem preparado nas últimas etapas.',
+    },
   ];
 
   return (
-    <section id="para-quem-e-a-mentoria" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section id="para-quem-e-a-mentoria" className="w-full bg-gray-300 py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-16">
           Para quem é essa mentoria?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {cards.map((card, index) => (
             <div
               key={index}

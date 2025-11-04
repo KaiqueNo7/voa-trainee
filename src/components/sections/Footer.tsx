@@ -18,7 +18,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-5 text-xl">
             <a
-              href="https://wa.me/5599999999999"
+              href="https://wa.me/5511921825233"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-400 transition-colors"
@@ -26,7 +26,7 @@ export default function Footer() {
               <FaWhatsapp />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/voatrainee/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-400 transition-colors"
@@ -34,7 +34,7 @@ export default function Footer() {
               <FaInstagram />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/voatrainee/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
               <FaLinkedin />
             </a>
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@voa.trainee?_r=1&_t=ZS-914cXOvbQWt"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-300 transition-colors"

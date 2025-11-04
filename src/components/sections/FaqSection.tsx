@@ -8,27 +8,27 @@ export default function FaqSection() {
     {
       question: 'O quão personalizado é a mentoria?',
       answer:
-        'A mentoria é totalmente personalizada de acordo com seu momento de carreira, perfil e objetivos. Cada participante recebe acompanhamento individual e estratégias específicas.',
+        'Totalmente personalizada! Antes de começar, fazemos um diagnóstico do seu perfil, objetivos e desafios. A partir disso, montamos um plano individual, com foco no que realmente vai te destacar nos processos seletivos de trainee, desde o autoconhecimento até a entrevista final.',
     },
     {
       question: 'Por quanto tempo fico na mentoria?',
       answer:
-        'A mentoria tem duração média de 8 semanas, mas você pode revisar os materiais e atividades pelo tempo que desejar durante o acesso.',
+        'A mentoria dura em média 6 semanas, com encontros semanais e tarefas práticas entre as sessões. Mas o ritmo é flexível, se você quiser avançar mais rápido ou tiver uma agenda mais corrida, adaptamos conforme sua disponibilidade.',
     },
     {
       question: 'E se eu não tiver tempo para me preparar?',
       answer:
-        'O conteúdo é flexível e adaptável à sua rotina. Você pode assistir às aulas no seu ritmo e combinar as mentorias individuais nos horários disponíveis.',
+        'A gente entende! Por isso, o método da Voa foi pensado para quem tem rotina cheia. Você recebe materiais objetivos, exercícios práticos e feedbacks diretos, para aproveitar ao máximo mesmo com pouco tempo. O importante é dar o primeiro passo, nós te acompanhamos no resto.',
     },
     {
       question: 'Qual plataforma é utilizada?',
       answer:
-        'Utilizamos uma plataforma online intuitiva para aulas e atividades, além de reuniões ao vivo pelo Google Meet ou Zoom.',
+        'Usamos o Google Meet para os encontros ao vivo e o um grupo no WhatsApp como hub central da mentoria, lá ficam seus materiais, tarefas e feedbacks organizados em um só lugar.',
     },
     {
       question: 'Existe algum suporte?',
       answer:
-        'Sim! Você conta com suporte contínuo da equipe da Voa Trainee via e-mail e WhatsApp durante todo o programa.',
+        'Sim! Durante toda a mentoria, você tem acesso direto à sua mentora pelo WhatsApp ou e-mail para tirar dúvidas e receber orientações rápidas. Nosso objetivo é estar com você em cada etapa da jornada.',
     },
   ];
 
