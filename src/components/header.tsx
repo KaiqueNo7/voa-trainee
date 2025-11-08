@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { menuItems } from "@/data/menuItems";
-import Logo from "./logo";
-import Links from "./links";
-import Cta from "./cta";
+import Logo from "./Logo";
+import Links from "./Links";
+import Cta from "./Cta";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -40,7 +40,7 @@ export default function Header() {
         </div>
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden flex flex-col gap-1.5 z-50"
+          className="md:hidden flex flex-col gap-1.5 z-50 cursor-pointer"
           aria-label="Abrir menu"
         >
           <span
@@ -62,14 +62,14 @@ export default function Header() {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white/10 backdrop-blur-md border-t border-white/20 shadow-lg md:hidden">
+        <div className="absolute top-full left-0 w-full h-fit bg-white/10 backdrop-blur-md border-t border-white/20 shadow-lg md:hidden z-50">
           <nav className="flex flex-col items-center gap-6 py-6">
             {menuItems.map((item) => (
               <a
                 key={item.url}
                 href={item.url}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white font-semibold opacity-90 hover:opacity-100 transition-opacity duration-300"
+                className="text-white font-semibold opacity-90 hover:opacity-100 transition-opacity duration-300 hover:backdrop-blur-lg px-4 py-2 w-full text-center"
               >
                 {item.text}
               </a>

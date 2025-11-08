@@ -1,6 +1,3 @@
-import Cta from "@/components/cta";
-import Header from "@/components/header";
-
 import AboutVoaTrainee from "@/components/sections/AboutVoaTrainee";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalContactSection from "@/components/sections/FinalContactSection";

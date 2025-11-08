@@ -1,15 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import Cta from '../cta';
+import Cta from '../Cta';
+import Title from '../Title';
 
 export default function AboutVoaTrainee() {
   return (
-    <section id="quem-somos" className="w-full bg-gray-300 py-20 px-6 md:px-12 lg:px-24">
+    <section id="quem-somos" className="w-full py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-10">
-          Um pouco sobre a Voa Trainee
-        </h2>
+        <Title text="Um pouco sobre a Voa Trainee" />
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
           <div className="w-full md:w-1/2">

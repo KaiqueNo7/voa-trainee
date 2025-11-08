@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import { FiChevronRight } from 'react-icons/fi';
+import Title from '../Title';
 
 type Testimonial = {
   type: 'video' | 'image' | 'embed';
@@ -22,7 +23,7 @@ export default function TestimonialsSection() {
     {
       type: 'video',
       image: '/testemonials/01.jpeg',
-      video: '/videos/testimonial1.mp4',
+      video: '/testemonials/videos/testimonial1.mp4',
       name: 'Luani Viccino',
       role: 'Trainee Alper Seguros',
       avatar: '/avatar.jpeg',
@@ -56,12 +57,10 @@ export default function TestimonialsSection() {
   return (
     <section
       id="depoimentos"
-      className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
+      className="w-full py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
     >
       <div className="max-w-6xl mx-auto text-center relative">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-12">
-          Principais depoimentos
-        </h2>
+        <Title text="Principais depoimentos" />
 
         <Swiper
           modules={[Navigation]}
@@ -131,7 +130,7 @@ export default function TestimonialsSection() {
                       key={index}
                       className="flex flex-col items-center bg-gray-100 rounded-lg p-4 shadow-sm"
                     >
-                      <div className="relative w-full aspect-4/3 mb-4">
+                      <div className="relative w-full h-full aspect-4/3 mb-4">
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -161,7 +160,7 @@ export default function TestimonialsSection() {
         </Swiper>
 
         <button
-          className="next-btn absolute right-0 md:-right-10 top-1/2 -translate-y-1/2 bg-white border border-gray-300 hover:bg-gray-50 rounded-full w-10 h-10 flex items-center justify-center text-2xl text-gray-700 shadow-sm transition-all cursor-pointer"
+          className="next-btn absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 bg-white border border-gray-300 hover:bg-gray-50 rounded-full w-10 h-10 flex items-center justify-center text-2xl text-gray-700 shadow-sm transition-all cursor-pointer"
         >
           <FiChevronRight />
         </button>

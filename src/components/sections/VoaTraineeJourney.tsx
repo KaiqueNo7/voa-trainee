@@ -4,14 +4,15 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
-  FaUserCircle,
   FaFileAlt,
   FaBullhorn,
   FaUsers,
   FaClipboardCheck,
   FaComments,
+  FaBrain,
 } from 'react-icons/fa';
-import Cta from '../cta';
+import Cta from '../Cta';
+import Title from '../Title';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +23,7 @@ export default function VoaTraineeJourney() {
 
   const steps = [
     {
-      icon: <FaUserCircle className="w-10 h-10 text-blue-500" />,
+      icon: <FaBrain className="w-10 h-10 text-blue-500" />,
       title: 'Autoconhecimento',
       text: 'Vamos descobrir seus talentos, competências e interesses para traçar um plano de carreira sólido.',
     },
@@ -60,34 +61,19 @@ export default function VoaTraineeJourney() {
 
     if (!container || !line || !dot) return;
 
-    const totalHeight = line.scrollHeight - 40; // ajusta o movimento da bolinha
-
     gsap.set(dot, { yPercent: -50 });
 
-    const tl = gsap.timeline({
+    gsap.to(dot, {
       scrollTrigger: {
         trigger: container,
         start: 'top center',
         end: 'bottom center',
         scrub: true,
       },
+      y: () => line.clientHeight - 30,
+      ease: 'none',
     });
 
-    // bolinha sobe junto com scroll
-    tl.fromTo(dot, { y: 0 }, { y: totalHeight, ease: 'none' });
-
-    // linha acende conforme o scroll
-    tl.fromTo(
-      line,
-      { backgroundSize: '100% 0%' },
-      {
-        backgroundSize: '100% 100%',
-        ease: 'none',
-      },
-      0
-    );
-
-    // animação suave dos cards
     gsap.utils.toArray('.card').forEach((card: any) => {
       gsap.fromTo(
         card,
@@ -113,41 +99,29 @@ export default function VoaTraineeJourney() {
   return (
     <section
       id="trajetoria"
-      className="w-full bg-conic from-blue-600 to-sky-400 py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
+      className="w-full rounded-t-4xl py-20 px-6 md:px-12 lg:px-24 relative bg-linear-to-r from-blue-800 to-blue-600 overflow-hidden"
     >
       <div
         ref={containerRef}
         className="max-w-4xl mx-auto flex flex-col items-center relative"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-16 text-center">
-          Trajetória na Voa Trainee
-        </h2>
+        <Title white text="Trajetória na Voa Trainee" />
 
         <div className="relative flex flex-col items-center">
-          {/* linha com gradiente e efeito de preenchimento */}
           <div
             ref={lineRef}
-            className="absolute left-1/2 -translate-x-1/2 w-4px h-full rounded-full z-30"
-            style={{
-              background:
-                'linear-gradient(to bottom, #3B82F6 0%, #1D4ED8 100%)',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 0%',
-              transition: 'background-size 0.2s ease',
-            }}
-          />
+            className="absolute left-1/2 top-0 h-full border-l-2 border-blue-400 border-dashed transform -translate-x-1/2"
+          /> 
 
-          {/* bolinha animada */}
           <div
             ref={dotRef}
             className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-linear-to-r from-blue-400 to-blue-700 rounded-full shadow-lg border-4 border-white z-0"
           ></div>
 
-          {/* passos */}
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`card relative flex flex-col md:flex-row items-center w-full my-20 ${
+              className={`card relative flex flex-col md:flex-row items-center w-full my-12 ${
                 index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
               }`}
             >

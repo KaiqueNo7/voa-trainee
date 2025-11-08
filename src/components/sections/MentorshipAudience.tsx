@@ -1,5 +1,7 @@
 'use client';
 
+import Title from "../Title";
+
 export default function MentorshipAudience() {
   const cards = [
     {
@@ -21,11 +23,9 @@ export default function MentorshipAudience() {
   ];
 
   return (
-    <section id="para-quem-e-a-mentoria" className="w-full bg-gray-300 py-20 px-6 md:px-12 lg:px-24">
+    <section id="para-quem-e-a-mentoria" className="w-full py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-16">
-          Para quem é essa mentoria?
-        </h2>
+        <Title text="Para quem é essa mentoria?" />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {cards.map((card, index) => (

@@ -45,7 +45,19 @@ export default function Cta({ text }: { text: string }) {
 
     const phone = "5511921825233";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
     window.open(url, "_blank");
+
+    setIsOpen(false);
+
+    setFormData({
+      nome: "",
+      celular: "",
+      email: "",
+      curso: "",
+      trainee: "",
+      periodo: "",
+    });
   };
 
   return (
@@ -76,46 +88,46 @@ export default function Cta({ text }: { text: string }) {
                 placeholder="Nome*"
                 value={formData.nome}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 name="celular"
                 placeholder="Celular*"
                 value={formData.celular}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 name="email"
                 placeholder="Email*"
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 name="curso"
                 placeholder="Curso"
                 value={formData.curso}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 name="trainee"
                 placeholder="Trainee Desejado"
                 value={formData.trainee}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
               <input
                 name="periodo"
                 placeholder="Período de formação"
                 value={formData.periodo}
                 onChange={handleChange}
-                className="bg-white/10 border border-white/20 rounded-lg p-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="bg-white/10 border border-white/20 rounded-lg p-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
             </div>
 
-            <div className="mt-6 flex flex-col gap-3">
+            <div className="mt-6 flex flex-col gap-2">
               <button
                 onClick={handleSubmit}
                 className="w-full cursor-pointer rounded-full bg-linear-to-r from-orange-400 to-orange-500 px-6 py-3 font-semibold text-white transition-all hover:brightness-110 active:scale-95"

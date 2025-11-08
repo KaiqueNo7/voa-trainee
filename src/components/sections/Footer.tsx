@@ -1,8 +1,8 @@
 'use client';
 
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
-import Logo from '../logo';
-import Links from '../links';
+import Logo from '../Logo';
+import Links from '../Links';
 
 export default function Footer() {
   return (

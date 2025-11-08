@@ -33,7 +33,7 @@ export default function Links({ withBackground = false, onClickItem }: LinksProp
           : ""
       }
     >
-      <ul className="flex gap-2 md:gap-4 lg:gap-6">
+      <ul className="flex gap-2 md:text-sm md:gap-4 lg:gap-6 md:flex-row flex-col text-center">
         {menuItems.map((item) => (
           <li key={item.url}>
             <a

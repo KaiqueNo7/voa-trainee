@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import Title from '../Title';
 
 export default function FaqSection() {
   const faqs = [
@@ -41,9 +42,7 @@ export default function FaqSection() {
   return (
     <section id="faq" className="w-full bg-white py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-12">
-          Dúvidas frequentes
-        </h2>
+        <Title text="Dúvidas frequentes" />
 
         <div className="space-y-4 text-left">
           {faqs.map((faq, index) => (

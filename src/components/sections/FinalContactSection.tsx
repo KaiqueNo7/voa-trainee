@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Cta from '../cta';
+import Cta from '../Cta';
 
 export default function FinalContactSection() {
   return (
