@@ -11,9 +11,8 @@ export default function VoaTraineeTextEffect() {
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    // Define a rotação com base na posição do mouse
-    const rotateX = (y / rect.height) * 45; // inclinação no eixo X
-    const rotateY = (-x / rect.width) * 45; // inclinação no eixo Y
+    const rotateX = (y / rect.height) * 45;
+    const rotateY = (-x / rect.width) * 45;
     setRotation({ x: rotateX, y: rotateY });
   };
 
