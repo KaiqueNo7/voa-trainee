@@ -64,7 +64,7 @@ export default function Cta({ text }: { text: string }) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="rounded-full cursor-pointer bg-linear-to-r from-orange-400 to-orange-500 px-6 py-3 font-semibold text-white transition-all hover:brightness-110 active:scale-95"
+        className="rounded-full cursor-pointer bg-linear-to-r from-orange-400 to-orange-500 px-6 py-3 font-semibold text-white transition-all hover:brightness-110 active:scale-95 z-30"
       >
         {text}
       </button>

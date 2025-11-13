@@ -69,7 +69,7 @@ export default function Header() {
       </div>
 
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full h-fit bg-white/10 backdrop-blur-md border-t border-white/20 shadow-lg md:hidden z-50">
+        <div className="absolute top-0 left-0 w-full flex flex-col justify-center h-screen bg-[#1426D1] backdrop-blur-md border-t border-white/20 shadow-lg md:hidden z-40">
           <nav className="flex flex-col items-center gap-2 py-2">
             {menuItems.map((item) => (
               <a
