@@ -22,7 +22,7 @@ export default function VoaTraineeTextEffect() {
 
   return (
     <div
-      className="w-full md:w-[40%] flex justify-center md:justify-end relative my-6 select-none"
+      className="w-full md:w-[40%] flex justify-center md:justify-end relative my-2 md:my-6 select-none"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

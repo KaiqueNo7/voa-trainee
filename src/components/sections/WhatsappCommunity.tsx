@@ -1,7 +1,7 @@
 'use client';
 
 import { FaWhatsapp } from 'react-icons/fa';
-import Logo from '../Logo';
+import Logo from '../logo';
 
 export default function WhatsappCommunity() {
   return (

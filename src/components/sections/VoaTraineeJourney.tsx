@@ -11,7 +11,7 @@ import {
   FaComments,
   FaBrain,
 } from 'react-icons/fa';
-import Cta from '../Cta';
+import Cta from '../cta';
 import Title from '../Title';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +110,7 @@ export default function VoaTraineeJourney() {
         <div className="relative flex flex-col items-center">
           <div
             ref={lineRef}
-            className="absolute left-1/2 top-0 h-full border-l-2 border-blue-400 border-dashed transform -translate-x-1/2"
+            className="absolute left-1/2 top-0 h-full border-l-4 border-blue-400 border-dashed transform -translate-x-1/2"
           /> 
 
           <div

@@ -1,9 +1,9 @@
 'use client';
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../Logo";
-import Cta from "../Cta";
-import Header from "../Header";
+import Logo from "../logo";
+import Cta from "../cta";
+import Header from "../header";
 import VoaTraineeTextEffect from "../VoaTraineeTextEffect";
 
 export default function HeroSection() {
@@ -21,13 +21,13 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="w-full bg-[#1426D1] text-white px-6 md:px-12 py-10 rounded-b-4xl overflow-hidden"
+      className="w-full bg-[#1426D1] text-white px-6 md:px-12 py-2 md:py-10 rounded-b-4xl overflow-hidden"
     >
       <Header />
 
-      <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-between gap-12 my-32">
+      <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-between gap-12 mt-32 mb-12 md:mb-32">
         <div className="w-full md:w-[60%] text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
+          <h2 className="text-2xl md:text-4xl font-bold mb-6 leading-snug">
             A preparação completa para conquistar sua vaga de trainee nos processos mais disputados do país.
           </h2>
           <p className="text-lg md:text-xl mb-8">

@@ -1,15 +1,15 @@
 'use client';
 
 import { FaWhatsapp, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
-import Logo from '../Logo';
-import Links from '../Links';
+import Logo from '../logo';
+import Links from '../links';
 
 export default function Footer() {
   return (
     <footer className="w-full bg-linear-to-r from-blue-900 to-blue-700 text-white py-10 px-6 md:px-12 lg:px-16">
       <div className="max-w-6xl mx-auto flex flex-col items-center justify-between gap-8">
         <div className="flex items-center gap-4 w-full">
-          <h3 className="text-xl font-semibold">Voe com a Voa Trainee.</h3>
+          <h3 className="text-xl font-semibold">Decole com a Voa Trainee.</h3>
           <Logo />
         </div>
 
@@ -51,6 +51,11 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Texto discreto no final */}
+        <p className="text-xs text-gray-300 mt-4 opacity-80">
+          Developed by <a href="https://kaiquenocetti.com" target='_blank' className="decoration-0">Kaique Nocetti</a>
+        </p>
       </div>
     </footer>
   );

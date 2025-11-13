@@ -2,17 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { menuItems } from "@/data/menuItems";
-import Logo from "./Logo";
-import Links from "./Links";
-import Cta from "./Cta";
+import Logo from "./logo";
+import Links from "./links";
+import Cta from "./cta";
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
+  const [hasBg, setHasBg] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
+      const scrollY = window.scrollY;
+      setIsSticky(scrollY > 100);
+      setHasBg(scrollY > 650);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -20,9 +23,13 @@ export default function Header() {
 
   return (
     <header
-      className={`flex items-center justify-between w-full px-8 py-4 transition-all duration-300 ${
+      className={`flex items-center justify-between w-full px-8 py-4 transition-all duration-500 ${
         isSticky
-          ? "fixed top-0 left-0 z-50"
+          ? `fixed top-0 left-0 z-50 ${
+              hasBg
+                ? "bg-[#1426D1] backdrop-blur-md shadow-lg rounded-b-4xl"
+                : "bg-transparent"
+            }`
           : "absolute top-0 left-0 bg-transparent"
       }`}
     >
@@ -63,7 +70,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full h-fit bg-white/10 backdrop-blur-md border-t border-white/20 shadow-lg md:hidden z-50">
-          <nav className="flex flex-col items-center gap-6 py-6">
+          <nav className="flex flex-col items-center gap-2 py-2">
             {menuItems.map((item) => (
               <a
                 key={item.url}

@@ -7,24 +7,24 @@ import Title from '../Title';
 export default function FaqSection() {
   const faqs = [
     {
-      question: 'O quão personalizado é a mentoria?',
+      question: 'O quão personalizada é a mentoria?',
       answer:
-        'Totalmente personalizada! Antes de começar, fazemos um diagnóstico do seu perfil, objetivos e desafios. A partir disso, montamos um plano individual, com foco no que realmente vai te destacar nos processos seletivos de trainee, desde o autoconhecimento até a entrevista final.',
+        'Totalmente personalizada! Antes de começar, fazemos um diagnóstico do seu perfil, objetivos e desafios. A partir disso, montamos um plano individual com foco no que realmente vai te destacar nos processos seletivos de trainee — desde o autoconhecimento até a entrevista final.',
     },
     {
       question: 'Por quanto tempo fico na mentoria?',
       answer:
-        'A mentoria dura em média 6 semanas, com encontros semanais e tarefas práticas entre as sessões. Mas o ritmo é flexível, se você quiser avançar mais rápido ou tiver uma agenda mais corrida, adaptamos conforme sua disponibilidade.',
+        'A mentoria dura, em média, seis semanas, com encontros semanais e tarefas práticas entre as sessões. Mas o ritmo é flexível — se você quiser avançar mais rápido ou tiver uma agenda mais corrida, adaptamos conforme sua disponibilidade.',
     },
     {
       question: 'E se eu não tiver tempo para me preparar?',
       answer:
-        'A gente entende! Por isso, o método da Voa foi pensado para quem tem rotina cheia. Você recebe materiais objetivos, exercícios práticos e feedbacks diretos, para aproveitar ao máximo mesmo com pouco tempo. O importante é dar o primeiro passo, nós te acompanhamos no resto.',
+        'A gente entende! Por isso, o método da Voa foi pensado para quem tem uma rotina cheia. Você recebe materiais objetivos, exercícios práticos e feedbacks diretos para aproveitar ao máximo, mesmo com pouco tempo. O importante é dar o primeiro passo — nós te acompanhamos no resto.',
     },
     {
       question: 'Qual plataforma é utilizada?',
       answer:
-        'Usamos o Google Meet para os encontros ao vivo e o um grupo no WhatsApp como hub central da mentoria, lá ficam seus materiais, tarefas e feedbacks organizados em um só lugar.',
+        'Usamos o Google Meet para os encontros ao vivo e um grupo no WhatsApp como hub central da mentoria. Lá ficam seus materiais, tarefas e feedbacks organizados em um só lugar.',
     },
     {
       question: 'Existe algum suporte?',
