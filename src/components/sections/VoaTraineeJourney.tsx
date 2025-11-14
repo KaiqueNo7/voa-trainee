@@ -13,13 +13,15 @@ import {
 } from 'react-icons/fa';
 import Cta from '../cta';
 import Title from '../Title';
+import Image from 'next/image';
+import { IoIosRocket } from 'react-icons/io';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function VoaTraineeJourney() {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<any>(null);
 
   const steps = [
     {
@@ -115,8 +117,10 @@ export default function VoaTraineeJourney() {
 
           <div
             ref={dotRef}
-            className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-linear-to-r from-blue-400 to-blue-700 rounded-full shadow-lg border-4 border-white z-0"
-          ></div>
+            className="absolute left-1/2 -translate-x-1/2 z-0 flex items-center justify-center w-12 h-12"
+          >
+            <IoIosRocket className="text-white text-6xl" />
+          </div>
 
           {steps.map((step, index) => (
             <div

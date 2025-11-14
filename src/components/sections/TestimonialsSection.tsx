@@ -83,6 +83,7 @@ export default function TestimonialsSection() {
           spaceBetween={30}
           allowTouchMove={true}
           className="overflow-hidden"
+          autoHeight={true}
         >
           {videoSlides.map((videoSlide, index) => (
             <SwiperSlide key={`video-${index}`}>
@@ -156,7 +157,7 @@ export default function TestimonialsSection() {
                         </div>
                         <div className="text-left">
                           <h3 className="font-semibold text-white text-base">{item.name}</h3>
-                          <small className="text-gray-300 text-sm">Mentorado</small>
+                          <small className="text-gray-300 text-sm">{item.role}</small>
                         </div>
                       </div>
                     </div>

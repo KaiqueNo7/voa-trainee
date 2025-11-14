@@ -23,7 +23,7 @@ export default function WhatsappCommunity() {
           href="https://chat.whatsapp.com/LL7eIkoQTKYI5Y04ypKIjX?mode=wwt"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-6 bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-full transition-colors"
+          className="inline-flex shadow-2xl items-center gap-2 mt-6 bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-full transition-colors"
         >
           Entrar na comunidade
           <FaWhatsapp size={18} />
