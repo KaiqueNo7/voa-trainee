@@ -42,7 +42,7 @@ export default function VoaTraineeJourney() {
     {
       icon: <FaUsers className="w-10 h-10 text-blue-500" />,
       title: 'Dinâmica de grupo',
-      text: 'Entenda como aplicar habilidades técnicas e comportamentais em situações práticas.',
+      text: 'Entenda como aplicar habilidades comportamentais e técnicas em situações práticas.',
     },
     {
       icon: <FaClipboardCheck className="w-10 h-10 text-blue-500" />,
